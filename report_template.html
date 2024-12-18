@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Report for {{ year }}, Week {{ week_number }}</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+    <h1>Weekly Report for Year {{ year }}, Week {{ week_number }}</h1>
+    <p>This report provides insights into the streaming performance across different channels based on the top 100 streams from <a href="https://streamscharts.com/">Streams Charts</a>.</p>
+    
+    <h2>Total Hours Watched by Channel Country</h2>
+    <div class="chart">
+        {{ chart_html_1 | safe }}
+    </div>
+    <p>The chart above shows the total hours watched categorised by channel country.</p>
+    
+    <h2>Total Peak Viewers by Channel Country</h2>
+    <div class="chart">
+        {{ chart_html_2 | safe }} 
+    </div>
+    <p>This chart displays the total peak viewers categorised by channel country, providing insights into viewer engagement during peak times.</p>
+    
+    <h2>Summary</h2>
+    <p>In summary, this report highlights key performance metrics for the week. Further analysis can be conducted to explore trends and patterns.</p>
+</body>
+</html>
