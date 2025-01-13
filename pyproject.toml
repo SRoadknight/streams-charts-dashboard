@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "streams-charts-t100-weekly"
+name = "streams-charts-t100-weekly-report"
 version = "0.1.0"
 description = ""
 authors = ["Simon Roadknight <s.roadknight96@gmail.com>"]
