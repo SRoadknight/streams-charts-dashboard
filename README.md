@@ -1,41 +1,43 @@
-# Weekly Report: Streams Charts Top 100 
+# The `streamlit hello` multipage demo app, on Railway!
 
-## Overview
-This repository contains weekly reports analysing the performance of the Top 100 Twitch streamers. The analysis focuses on key business questions relevant to Twitch as a streaming platform and advertisers aiming to leverage the platform's audience.
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/nj-Wms?referralCode=ySCnWl)
 
-## Key Business Questions
+This project highlights Streamlit's new multipage app functionality. Now deployable directly to Railway!
 
-### For Twitch (Streaming Platform)
-1. **What drives viewer engagement?**
-   - Analyse metrics like hours watched, peak viewers, and average viewers.
-   - Identify trends in games, streamers, and regions.
+![In-use Animation](https://github.com/streamlit/hello/blob/main/mpa-hero.gif?raw=true "In-use Animation")
 
-2. **How can regional and language trends be optimised?**
-   - Examine engagement by channel country and stream language.
+## How to run this project locally
 
-3. **Which streamers contribute the most to platform growth?**
-   - Evaluate follower growth and airtime for top creators.
+- pip install -r requirements.txt
+- streamlit run Hello.py
+- open your browser to `http://127.0.0.1:8501`
 
-### For Advertisers
-1. **Which streamers offer the best advertising opportunities?**
-   - Identify high-impact channels based on hours watched, peak viewers, and live views.
+## Learn more
 
-2. **How do regional and language preferences shape ad targeting?**
-   - Understand audience distribution and language preferences for targeted campaigns.
+- [The original repository that this template used](https://github.com/streamlit/hello)
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Multipage Documentation](https://docs.streamlit.io/library/get-started/multipage-apps)
+- [Blog post](https://blog.streamlit.io/introducing-multipage-apps/)
 
-3. **What games or events are most appealing to target demographics?**
-   - Track viewership trends by game to align sponsorships with audience interests.
+## What makes this work on Railway?
 
+For this project to run on Railway I have added a `railway.json` file with a custom start command, let me break the start command down:
+- `streamlit run Hello.py` tells streamlit to run `Hello.py`
+- `--server.address 0.0.0.0` listen on host `0.0.0.0` so that streamlit is accessible externally
+- `--server.port $PORT` configures streamlit to listen on the auto assigned `PORT` variable that railway expects the app to listen on
+- `--server.fileWatcherType none` turns off the file watcher, code changes can't be made after the deployment so starting a file watcher uses unnecessary resources and can cause instabilities
+- `--browser.gatherUsageStats false` disables telemetry reporting
+- `--client.showErrorDetails false` disables showing debug messages in the browser
+- `--client.toolbarMode minimal` removes the 3-dot debug menu from the deployed site
 
-## Potential Insights and Applications
-- **Twitch:** Use data to optimise regional strategies, partner with top creators, and focus on trending categories to grow engagement.
-- **Advertisers:** Target campaigns on high-performing channels, trending games, and regions or languages with significant viewership.
+Documentation for additional configurations can be found [here](https://docs.streamlit.io/library/advanced-features/configuration)
 
+I have also updated the dependencies in the `requirements.txt` file, and added a `.python-version` file that tells Railway to build this project with Python 3.10
 
-## How to Use This Repository
-1. **Explore Weekly Reports:**
-   - Each report includes data visualisations and insights addressing the business questions.
+## Questions? Comments? - Streamlit
 
-2. **Access Raw Data:**
-   - CSV files for each week are available in the `/data` directory for additional analysis.
+Please ask in the [community forum](https://discuss.streamlit.io)
 
+## Questions? Comments? - Railway
+
+Join our [discord server](https://discord.gg/railway) and open a `#Help` thread!
