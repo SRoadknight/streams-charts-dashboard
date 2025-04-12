@@ -22,11 +22,13 @@ LOGGER = get_logger(__name__)
 
 def run():
     home_page = st.Page("home.py", title="Twitch Top Streamers")
-    weekly_page = st.Page("twitch_weekly.py", title="Top Weekly")
+    weekly_page = st.Page("top_weekly.py", title="Top Weekly")
+    streamer = st.Page("streamer.py", title="By Streamer")
 
     pg = st.navigation([
         home_page,
-        weekly_page
+        weekly_page,
+        streamer
     ])
     pg.run()
 
